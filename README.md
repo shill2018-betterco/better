@@ -49,7 +49,9 @@ Please implement the spec (design and product) using these instructions.
 
 ## Checklist
 
-We obviously prefer it if you implement all the features, but realistically some people have very busy schedules. If your time schedule is limited and you don't have time to implement all features, that's OK. Just make sure to leave a comment so that we know. Just to give you an idea of what features we think are most important, here is a rough list of items in decreasing order of priority:
+We obviously prefer it if you implement all the features, but realistically some people have very busy schedules. If your time schedule is limited and you don't have time to implement all features, that's OK. Just make sure to leave a comment so that we know (feel free to update this checklist and put an X in the checkboxes below).
+
+Here is a rough list of features in decreasing order of how important we think they are to implement:
 
 *Critical features*
 
