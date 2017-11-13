@@ -53,19 +53,19 @@ We obviously prefer it if you implement all the features, but realistically some
 
 Here is a rough list of features in decreasing order of how important we think they are to implement:
 
-*Critical features*
+### Critical features
 
 1. [ ] Basic layout: make the look and feel conform to the Zeplin spec.
 1. [ ] Responsiveness: make the layout behave well on mobile.
 1. [ ] The input field on the bottom should have a character counter, should be disabled if >140 characters, and should stay at the bottom of the screen at all times.
 
-*Important*
+### Important features
 
 1. [ ] Support for favorites (hover over a post and "star" it)
 1. [ ] Build pipeline: needed if you're using a framework such as React/Vue/etc and you need to compile the source code.
 1. [ ] Support for "evergreen" browers: Firefox and Safari
 
-*Optional*
+### Optional features
 
 1. [ ] Support for retweets and replies
 1. [ ] Keyboard integration: submit current post on enter in the input field (if there's text present).
