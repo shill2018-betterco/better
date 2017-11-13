@@ -47,6 +47,28 @@ Please implement the spec (design and product) using these instructions.
 * Replies should be nested under the posts they are replying to. Chains of replies, i.e. threads, must be logically unlimited (i.e. there can be an unlimited number of replies to replies), but you can add visual limits to nesting if you choose.
 * Post metadata (real name, username, timestamp) should not wrap at mobile sizes.
 
+## Checklist
+
+We obviously prefer it if you implement all the features, but realistically some people have very busy schedules. If your time schedule is limited and you don't have time to implement all features, that's OK. Just make sure to leave a comment so that we know. Just to give you an idea of what features we think are most important, here is a rough list of items in decreasing order of priority:
+
+*Critical features*
+
+1. [ ] Basic layout: make the look and feel conform to the Zeplin spec.
+1. [ ] Responsiveness: make the layout behave well on mobile.
+1. [ ] The input field on the bottom should have a character counter, should be disabled if >140 characters, and should stay at the bottom of the screen at all times.
+
+*Important*
+
+1. [ ] Support for favorites (hover over a post and "star" it)
+1. [ ] Build pipeline: needed if you're using a framework such as React/Vue/etc and you need to compile the source code.
+1. [ ] Support for "evergreen" browers: Firefox and Safari
+
+*Optional*
+
+1. [ ] Support for retweets and replies
+1. [ ] Keyboard integration: submit current post on enter in the input field (if there's text present).
+
+
 ## How to submit your work
 
 * Fork this repo
