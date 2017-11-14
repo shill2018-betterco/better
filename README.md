@@ -39,7 +39,7 @@ Here is a rough list of features in decreasing order of how important we think t
 * [ ] The message entry text box should be visible at all times.
 * [ ] New post length must be limited and must not be zero; the character counter must be functional (it must go negative when the character limit is exceeded; check Zeplin spec for more details). Links should count against the character limit.
 
-## Important features:
+## Important features
 
 * [ ] The timestamp for each post should be updated in real time.
 * [ ] Posts must support the like interaction: this would save the original post in the reposting user's liked posts lists; in this project, it's only used to count.
@@ -49,7 +49,7 @@ Here is a rough list of features in decreasing order of how important we think t
 * [ ] Support at least Chrome, Firefox, and Safari.
 * [ ] If your approach requires compiling Javascript, a build pipeline should be included.
 
-## Optional features:
+## Optional features
 
 * [ ] Posts must support the reply interaction: this creates a new post in reply to the original post; replies are visually distinct in the timeline.
 * [ ] Posts must support the repost interaction: this reposts the original post once in the reposting user's timeline.
