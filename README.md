@@ -64,5 +64,6 @@ We obviously prefer it if you implement all the features, but realistically some
 * Fork this repo
 * Push your changes
 * Open a pull request
+* Submit a .zip of your project build via the Greenhouse link
 
 Please contact us if you have any questions.
