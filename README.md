@@ -1,8 +1,24 @@
+
 # Microblog
 
-This is an incomplete implementation of a Twitter-like single-user microblog timeline.
+# Getting Started
 
-Please implement the spec (design and product) using these instructions.
+If you just want to look at the site, check out `build/index.html`. It has all the compiled code, so you can open it in your browser easily.
+
+# Developing
+
+This project uses Gulp to automate the build process,
+```
+npm install -g gulp
+gulp watch
+```
+
+and BrowserSync to continuously update the DOM when the files change.
+
+```
+npm install -g browser-sync
+browser-sync start -s -f . --no-notify --port 9000
+```
 
 ## Resources
 

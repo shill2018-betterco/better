@@ -1,93 +1,24 @@
 <!doctype html>
 <html>
-<head>
-<title>Microblog</title>
-<style type="text/css">
-  #timeline {
-    margin: 1em auto;
-  }
+    <head>
+        <title>Microblog</title>
 
-  .post {
-    padding: 7px;
-    margin-bottom: 7px;
-  }
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="build/main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="timeline"></div>
 
-  .post q {
-    display: block;
-  }
+        <div id="new_post">
+            <input id="char-count" value="140" disabled>
+            <textarea rows=3 id="new-post-text" placeholder="what's happening?" name="new_post_text" onkeypress="return checkEnter(event)"></textarea>
+            <button id="submit-post">
+                <i class="material-icons">send</i>
+            </button>
+        </div>
 
-  #new_post {
-    padding: 7px;
-  }
-
-</style>
-</head>
-<body>
-  <div id="timeline"></div>
-
-  <div id="new_post">
-    <form>
-      <textarea rows=3 name="new_post_text"></textarea>
-      <button>Post</button>
-    </form>
-  </div>
-
-  <script>
-    var users = {
-      '1': {
-        username: 'marymeeker',
-        real_name: 'Mary Meeker',
-        verified: true
-      },
-      '2': {
-        username: 'ConanOBrien',
-        real_name: 'Conan O\' Brien',
-        verified: true
-      },
-      '3': {
-        username: 'baratunde',
-        real_name: 'Baratunde',
-        verified: false
-      }
-    };
-
-    var posts = [
-      {
-        id: 2374237842,
-        user: 1,
-        message: 'Spotify has grown to more than 60 million monthly active users, 15 million of whom are paying subscribers.',
-        ts: 1337774582
-      },
-      {
-        id: 2374272076,
-        user: 2,
-        message: 'If I were in prison, I wouldn\'t ruin my spoon trying to tunnel out, because going without morning yogurt is its own prison.',
-        ts: 1337968739
-      },
-      {
-        id: 4545435344,
-        user: 3,
-        message: 'Something beautiful for you from Cornwall. https://media.better.com/microblog/cornwall.jpg',
-        ts: 1461607139
-      },
-      {
-        id: 4629293242,
-        user: 2,
-        reply_to: 4545435344,
-        message: 'Love this shot. Reminds me of the first time someone found me at the end of a rainbow holding a pot of gold.',
-        ts: 1478942943
-      }
-    ];
-
-    for (var i = 0; i < posts.length; i++) {
-      var post = posts[i];
-      var frag = document.createDocumentFragment();
-      var el = document.createElement('div');
-      el.classList.add('post');
-      el.innerHTML = '<div class="post"><q>' + post.message + '</q><cite>' + post.user + '</cite>';
-      frag.appendChild(el);
-      timeline.appendChild(frag);
-    }
-  </script>
-</body>
+        <script src="libraries/moment.js" type="text/javascript"></script>
+        <script src="scripts/main.js" type="text/javascript"></script>
+    </body>
 </html>
