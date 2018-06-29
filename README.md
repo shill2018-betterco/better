@@ -44,16 +44,16 @@ Here is a rough list of features in decreasing order of how important we think t
 ## Critical features
 
 * [ ] Create a single-user timeline of posts that conforms to the Zeplin spec.
-* [ ] The timeline must support new posts by the current user.
-* [ ] New posts must appear before older posts, except in reply threads.
+* [X] The timeline must support new posts by the current user.
+* [X] New posts must appear before older posts, except in reply threads.
 * [ ] The interface should be responsive; it should scale with the viewport size.
-* [ ] Posts should not be empty and should gracefully support overly-long non-wrapping message text.
-* [ ] Every post must have the user identifiers: name, real name, photo, and verified status
+* [X] Posts should not be empty and should gracefully support overly-long non-wrapping message text.
+* [X] Every post must have the user identifiers: name, real name, photo, and verified status
 * [ ] Post metadata (real name, username, timestamp) should not wrap at mobile sizes.
-* [ ] Every post must have the text of the post.
-* [ ] Every post must have a relative timestamp of the time the post was published.
-* [ ] The message entry text box should be visible at all times.
-* [ ] New post length must be limited and must not be zero; the character counter must be functional (it must go negative when the character limit is exceeded; check Zeplin spec for more details). Links should count against the character limit.
+* [X] Every post must have the text of the post.
+* [X] Every post must have a relative timestamp of the time the post was published.
+* [X] The message entry text box should be visible at all times.
+* [X] New post length must be limited and must not be zero; the character counter must be functional (it must go negative when the character limit is exceeded; check Zeplin spec for more details). Links should count against the character limit.
 
 ## Important features
 
@@ -63,15 +63,15 @@ Here is a rough list of features in decreasing order of how important we think t
 * [ ] Post interactions should only change their counters once.
 * [ ] Posts should revert to their pre-interaction state once an interaction has been completed.
 * [ ] Support at least Chrome, Firefox, and Safari.
-* [ ] If your approach requires compiling Javascript, a build pipeline should be included.
+* [X] If your approach requires compiling Javascript, a build pipeline should be included.
 
 ## Optional features
 
 * [ ] Posts must support the reply interaction: this creates a new post in reply to the original post; replies are visually distinct in the timeline.
 * [ ] Posts must support the repost interaction: this reposts the original post once in the reposting user's timeline.
 * [ ] Every post should include zero or more photo attachments that are automatically generated if an image link is detected in the post text. Note: there is no need to design any upload or cropping functionality - if an image link exists in text, it should be converted to an attachment and the image should be loaded and "cropped" via CSS as best as possible.
-* [ ] Replies should be nested under the posts they are replying to. Chains of replies, i.e. threads, must be logically unlimited (i.e. there can be an unlimited number of replies to replies), but you can add visual limits to nesting if you choose.
-* [ ] Keyboard integration: submit current post when the user presses the Enter key (if there's text present).
+* [X] Replies should be nested under the posts they are replying to. Chains of replies, i.e. threads, must be logically unlimited (i.e. there can be an unlimited number of replies to replies), but you can add visual limits to nesting if you choose.
+* [X] Keyboard integration: submit current post when the user presses the Enter key (if there's text present).
 
 We obviously prefer it if you implement all the features, but realistically some people have very busy schedules. If your time schedule is limited and you don't have time to implement all features, that's OK. Just make sure to leave a comment so that we know, and feel free to update this checklist and put an X in the checkboxes.
 

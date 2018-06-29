@@ -1,7 +1,18 @@
-i .link {
+.verified-icon {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #092828;
+}
+.link-icon {
   width: 20px;
   height: 20px;
-  font-family: MaterialIcons;
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
@@ -11,10 +22,9 @@ i .link {
   text-align: center;
   color: #092828;
 }
-i .send {
+.send-icon {
   width: 20px;
   height: 20px;
-  font-family: MaterialIcons;
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
@@ -25,20 +35,36 @@ i .send {
   color: #b1bebe;
 }
 body {
-  padding: 1rem;
+  padding: .5rem;
+  max-width: 100%;
+}
+body * {
+  transition: all .15s;
 }
 body #submit-post {
   border: none;
   float: right;
 }
+body q:before {
+  content: no-open-quote;
+}
+body q:after {
+  content: no-close-quote;
+}
 #timeline {
   margin: 1em auto;
 }
+.error {
+  color: red !important;
+}
 .post {
   padding: 7px;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   color: #092828;
   font-family: Roboto;
+}
+.post:last-of-type {
+  padding-bottom: 4rem;
 }
 .post q {
   display: block;
@@ -46,6 +72,24 @@ body #submit-post {
   font-size: 15px;
   border-radius: 7px;
   background-color: #f6f6f6;
+}
+.post q:hover,
+.post q .tapped {
+  cursor: pointer;
+}
+.post q:hover .textContent,
+.post q .tapped .textContent {
+  opacity: 0;
+}
+.post q:hover .actions,
+.post q .tapped .actions {
+  opacity: 1;
+  margin: 0 auto;
+}
+.post q .actions {
+  position: absolute;
+  display: inline;
+  opacity: 0;
 }
 .post .image-container {
   display: inline-block;
@@ -69,9 +113,18 @@ body #submit-post {
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
+  display: flex;
 }
 .post .text .name * {
   padding: 5px;
+}
+.post .text .name .verified_user,
+.post .text .name .real,
+.post .text .name .time {
+  flex-grow: 1;
+}
+.post .text .name .user {
+  flex-grow: 20;
 }
 .post .attachment {
   max-width: 100%;
@@ -92,29 +145,49 @@ body #submit-post {
   text-align: left;
   color: #ffffff;
 }
-.post .mine .name .real {
+.post .mine .text .name {
+  text-align: right;
+}
+.post .mine .text .name .real {
   display: none;
 }
-.post .mine .name .user {
+.post .mine .text .name .user {
   display: none;
 }
-.post .mine .image {
-  display: none;
+.post .mine .image-container {
+  float: right;
+  width: 48px;
+  height: 48px;
+  border-radius: 40px;
+  background-color: #092828;
+}
+.post .mine .image-container .image {
+  width: 20.7px;
+  height: 17.5px;
+  margin: 30%;
 }
 #new_post {
   padding: 7px;
   border-top: 1px solid #d8d7d7;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: inline-flex;
 }
 #new_post #new-post-text {
   border: none;
-  width: 70%;
   font-size: 18px;
+  flex-grow: 2;
 }
 #new_post #char-count {
   border: none;
-  float: left;
   font-size: 11px;
   color: #b1bebe;
+  flex-grow: 1;
+}
+#new_post #submit-post {
+  flex-grow: 1;
 }
 textarea:hover,
 input:hover,

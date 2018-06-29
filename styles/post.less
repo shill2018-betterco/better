@@ -1,8 +1,12 @@
 .post {
     padding: 7px;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: #092828;
     font-family: Roboto;
+
+    &:last-of-type{
+        padding-bottom: 4rem;
+    }
 
     q {
         display: block;
@@ -10,6 +14,29 @@
         font-size: 15px;
         border-radius: 7px;
         background-color: #f6f6f6;
+
+        &:hover, .tapped {
+            cursor: pointer;
+
+            .textContent {
+                opacity: 0;
+            }
+
+            .actions {
+                opacity: 1;
+                margin: 0 auto;
+            }
+        }
+
+        .textContent {
+        }
+
+        .actions {
+            position: absolute;
+            display: inline;
+            opacity: 0;
+        }
+
     }
 
     .image-container {
@@ -36,9 +63,18 @@
             line-height: normal;
             letter-spacing: normal;
             text-align: left;
+            display: flex;
 
             * {
                 padding: 5px;
+            }
+
+            .verified_user, .real, .time {
+                flex-grow: 1;
+            }
+
+            .user {
+                flex-grow: 20;
             }
         }
     }
@@ -66,17 +102,32 @@
             color: #ffffff;
         }
 
-        .name {
-            .real {
-                display: none;
-            }
-            .user {
-                display: none;
+        .text {
+            .name {
+                text-align: right;
+                .real {
+                    display: none;
+                }
+                .user {
+                    display: none;
+                }
             }
         }
 
-        .image {
-            display: none;
+        //since the Mine user image is a SVG, not a photo,
+        //  we want to wrap it in a container that simulates the normal image dimensions
+        .image-container {
+            float:right;
+            width: 48px;
+            height: 48px;
+            border-radius: 40px;
+            background-color: #092828;
+
+            .image {
+                width: 20.7px;
+                height: 17.5px;
+                margin: 30%;
+            }
         }
     }
 }
@@ -84,17 +135,26 @@
 #new_post {
     padding: 7px;
     border-top: 1px solid #d8d7d7;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: inline-flex;
 
     #new-post-text {
         border: none;
-        width: 70%;
         font-size: 18px;
+        flex-grow: 2;
     }
 
     #char-count {
         border: none;
-        float: left;
         font-size: 11px;
         color: #b1bebe;
+        flex-grow: 1;
+    }
+
+    #submit-post {
+        flex-grow: 1;
     }
 }

@@ -1,12 +1,27 @@
 body {
-    padding: 1rem;
+    * {
+        transition: all .15s;
+    }
+    padding: .5rem;
+    max-width: 100%;
 
     #submit-post {
         border: none;
         float: right;
     }
+
+    q:before {
+        content: no-open-quote;
+    }
+    q:after {
+        content: no-close-quote;
+    }
 }
 
 #timeline {
   margin: 1em auto;
+}
+
+.error {
+    color: @error-color !important;
 }

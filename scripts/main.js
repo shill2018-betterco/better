@@ -1,3 +1,5 @@
+const MAX_CHAR_COUNT = 140
+
 var users = {
   '1': {
     username: 'marymeeker',
@@ -41,7 +43,13 @@ var posts = [
     reply_to: 4545435344,
     message: 'Love this shot. Reminds me of the first time someone found me at the end of a rainbow holding a pot of gold.',
     ts: 1478942943
-  }
+},
+{
+    id: 1234455667,
+    user: 4,
+    message: 'This is the type of message that the person logged in would see whenever they posted it.',
+    ts: 1478942945
+}
 ];
 
 let getUser = function(id) {
@@ -78,8 +86,8 @@ let insertPost = function() {
     //reset the textbox value
     document.getElementById("new-post-text").value = ''
 
-    //scroll down for new post
-    window.scrollTo(0,document.body.scrollHeight);
+    //clear character counter
+    document.getElementById("char-count").value = MAX_CHAR_COUNT
 
     return true
 }
@@ -92,14 +100,14 @@ let buildHTMLForPost = function(post) {
     let checkedPost = checkForAttachment(post.message),
         user = getUser(post.user),
         time = moment.unix(post.ts).fromNow(),
-        verified = user.verified ? '<i class="material-icons verified_user">verified_user</i>': '',
+        verified = user.verified ? '<i class="material-icons verified-icon">verified_user</i>': '',
         isAReply = post.reply_to !== undefined,
         hasAttachment = checkedPost.url !== false,
         isMine = user.name == 'me'
 
-    let html = `<div class="post ${isAReply ? 'reply': ''} ${isMine ? 'mine': ''}">` +
+    let html = `<div class="inner ${isAReply ? 'reply': ''} ${isMine ? 'mine': ''}">` +
                     `<div class="image-container">` +
-                        `<img class="image" src="images/${user.username}.jpg" alt="${user.real_name}"/>` +
+                        `<img class="image" src="${isMine ? `images/better-icon.svg` : `images/${user.username}.jpg` }" alt="${user.real_name}"/>` +
                     `</div>` +
                     `<div class="text">` +
                         `<div class="name" user="${post.user}">` +
@@ -108,7 +116,12 @@ let buildHTMLForPost = function(post) {
                             `<span class="user">@${user.username}</span>` +
                             `<span class="time">${time}</span>` +
                         `</div>` +
-                        `<q>${checkedPost.message} ${hasAttachment ? '<i class="material-icons link">link</i>': ''}</q>` +
+                        `<q>` +
+                            `<div class="actions">` +
+                                `<i class="material-icons reply-icon">reply</i>` +
+                            `</div>` +
+                            `<span class="textContent">${checkedPost.message} ${hasAttachment ? '<i class="material-icons link-icon">link</i>': ''}</span>` +
+                        `</q>` +
                         `<img class="attachment" src="${checkedPost.url || ''}" />` +
                     `</div>` +
                '</div>'
@@ -146,27 +159,38 @@ let checkForAttachment = function(message) {
 let refreshPosts = function() {
     document.getElementById("timeline").innerHTML = ''
 
-    for (var i = 0; i < posts.length; i++) {
-      var post = posts[i];
-      var frag = document.createDocumentFragment();
-      var el = document.createElement('div');
-      el.classList.add('post');
-      el.innerHTML = buildHTMLForPost(posts[i]);
-      frag.appendChild(el);
-      timeline.appendChild(frag);
-    }
+    //chronological order
+    posts.sort(function(a,b) {
+        return a.ts > b.ts
+    })
+
+    posts.map(function(post) {
+        var frag = document.createDocumentFragment();
+        var el = document.createElement('div');
+        el.classList.add('post');
+        el.innerHTML = buildHTMLForPost(post);
+        frag.appendChild(el);
+        timeline.appendChild(frag);
+    })
+
+    //scroll down for new posts
+    window.scrollTo(0,document.body.scrollHeight)
 }
 
 //checks the length of a new post
 //updates the char count input
 let checkLength = function() {
+    let charCountElement = document.getElementById("char-count")
+
     textLength = document.getElementById("new-post-text").value.length
 
-    document.getElementById("char-count").value = 140 - textLength
+    charCountElement.value = MAX_CHAR_COUNT - textLength
 
-    if(textLength > 140) {
+    if(textLength > MAX_CHAR_COUNT) {
+        charCountElement.className = 'error'
         return true
     }
+    charCountElement.className = ''
     return false
 }
 
