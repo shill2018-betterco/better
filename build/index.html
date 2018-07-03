@@ -5,213 +5,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <style>.verified-icon {
-  width: 14px;
-  height: 14px;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #092828;
-}
-.link-icon {
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #092828;
-}
-.send-icon {
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #b1bebe;
-}
-body {
-  padding: .5rem;
-  max-width: 100%;
-}
-body * {
-  transition: all .15s;
-}
-body #submit-post {
-  border: none;
-  float: right;
-}
-body q:before {
-  content: no-open-quote;
-}
-body q:after {
-  content: no-close-quote;
-}
-#timeline {
-  margin: 1em auto;
-}
-.error {
-  color: red !important;
-}
-.post {
-  padding: 7px;
-  margin-bottom: .5rem;
-  color: #092828;
-  font-family: Roboto;
-}
-.post:last-of-type {
-  padding-bottom: 4rem;
-}
-.post q {
-  display: block;
-  padding: 1rem;
-  font-size: 15px;
-  border-radius: 7px;
-  background-color: #f6f6f6;
-}
-.post q:hover,
-.post q .tapped {
-  cursor: pointer;
-}
-.post q:hover .textContent,
-.post q .tapped .textContent {
-  opacity: 0;
-}
-.post q:hover .actions,
-.post q .tapped .actions {
-  opacity: 1;
-  margin: 0 auto;
-}
-.post q .actions {
-  position: absolute;
-  display: inline;
-  opacity: 0;
-}
-.post .image-container {
-  display: inline-block;
-  width: 15%;
-  float: left;
-}
-.post .image-container .image {
-  width: 48px;
-  height: 48px;
-  border-radius: 40px;
-}
-.post .text {
-  display: inline-block;
-  width: 85%;
-}
-.post .text .name {
-  font-size: 11px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  display: flex;
-}
-.post .text .name * {
-  padding: 5px;
-}
-.post .text .name .verified_user,
-.post .text .name .real,
-.post .text .name .time {
-  flex-grow: 1;
-}
-.post .text .name .user {
-  flex-grow: 20;
-}
-.post .attachment {
-  max-width: 100%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.post .reply {
-  margin-left: 15%;
-}
-.post .mine q {
-  background-color: #00c397;
-  font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.4;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-.post .mine .text .name {
-  text-align: right;
-}
-.post .mine .text .name .real {
-  display: none;
-}
-.post .mine .text .name .user {
-  display: none;
-}
-.post .mine .image-container {
-  float: right;
-  width: 48px;
-  height: 48px;
-  border-radius: 40px;
-  background-color: #092828;
-}
-.post .mine .image-container .image {
-  width: 20.7px;
-  height: 17.5px;
-  margin: 30%;
-}
-#new_post {
-  padding: 7px;
-  border-top: 1px solid #d8d7d7;
-  background: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: inline-flex;
-}
-#new_post #new-post-text {
-  border: none;
-  font-size: 18px;
-  flex-grow: 2;
-}
-#new_post #char-count {
-  border: none;
-  font-size: 11px;
-  color: #b1bebe;
-  flex-grow: 1;
-}
-#new_post #submit-post {
-  flex-grow: 1;
-}
-textarea:hover,
-input:hover,
-textarea:active,
-input:active,
-textarea:focus,
-input:focus,
-button:focus,
-button:active,
-button:hover,
-label:focus,
-.btn:active,
-.btn.active {
-  outline: 0px !important;
-  -webkit-appearance: none;
-}
-</style>
+        <style>.verified-icon{width:14px;height:14px;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;text-align:center;color:#092828}.link-icon{width:20px;height:20px;font-size:20px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;text-align:center;color:#092828}.send-icon{width:20px;height:20px;font-size:20px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;text-align:left;color:#00c397}body{padding:.5rem;max-width:100%}body *{transition:all .15s}body #submit-post{border:none;float:right;background:0 0}body q:before{content:no-open-quote}body q:after{content:no-close-quote}#timeline{margin:1em auto}.error{color:red!important}.post{padding:7px;margin-bottom:.5rem;color:#092828;font-family:Roboto}.post:last-of-type{padding-bottom:4rem}.post.tapped{cursor:pointer}.post.tapped .textContent{opacity:0}.post.tapped .actions{opacity:1}.post q{display:block;padding:1rem;font-size:15px;border-radius:7px;background-color:#f6f6f6}.post q:hover{cursor:pointer}.post q:hover .textContent{opacity:0}.post q:hover .actions{opacity:1}.post q .actions{position:absolute;display:inline;opacity:0}.post ul{list-style-type:none}.post .actions{margin:-15px auto;display:inline;width:70%;opacity:0;text-align:center}.post .actions .action-item{padding:10px;display:inline-block}.post .actions .action-item:hover{color:#00c397}.post .actions .action-item .count{border:none;background:0 0;display:block;pointer-events:none;max-width:45px;text-align:center}.post .actions .action-item .count.dirty{color:#00c397}.post .image-container{display:inline-block;width:15%;float:left}.post .image-container .image{width:48px;height:48px;border-radius:40px}.post .text{display:inline-block;width:85%}.post .text .name{font-size:11px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;text-align:left;display:flex}.post .text .name *{padding:5px}.post .text .name .real,.post .text .name .time,.post .text .name .verified_user{flex-grow:1}.post .text .name .user{flex-grow:20}.post .attachment{max-width:100%;border-bottom-left-radius:10px;border-bottom-right-radius:10px}.post .reply{margin-left:15%}.post .reply .actions{width:55%}.post .mine q{background-color:#00c397;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.4;letter-spacing:normal;text-align:left;color:#fff}.post .mine q:before{display:none}.post .mine q:hover{cursor:auto}.post .mine q:hover .textContent{opacity:1}.post .mine q:hover .actions{opacity:0}.post .mine .text{margin-left:10%;width:80%}.post .mine .text .name{text-align:right}.post .mine .text .name .real{display:none}.post .mine .text .name .user{display:none}.post .mine .image-container{float:right;width:48px;height:48px;border-radius:40px;background-color:#092828}.post .mine .image-container .image{width:20.7px;height:17.5px;margin:30%}#new_post{padding:7px;border-top:1px solid #d8d7d7;background:#fff;position:fixed;bottom:0;width:100%;display:inline-flex}#new_post #new-post-text{border:none;font-size:18px;flex-grow:2}#new_post #char-count{border:none;font-size:11px;color:#b1bebe;flex-grow:1;color:#00c397}#new_post #submit-post{flex-grow:1;cursor:pointer}.btn.active,.btn:active,button:active,button:focus,button:hover,input:active,input:focus,input:hover,label:focus,textarea:active,textarea:focus,textarea:hover{outline:0!important;-webkit-appearance:none}</style>
     </head>
     <body>
         <div id="timeline"></div>
@@ -443,6 +237,41 @@ document.getElementById("new-post-text").onkeyup = checkLength;
 document.getElementById("new-post-text").onblur = checkLength;
 
 document.getElementById("chart-count")
+
+//listen for submit button
+document.getElementById("submit-post").onclick = function(e){
+    insertPost()
+    return false
+}
+
+//listen for enter keypress
+function checkEnter(e) {
+    if (e.keyCode == 13) {
+        insertPost()
+        return false
+    }
+}
+
+
+let el = document.getElementsByClassName('post')
+for (var i=0; i < el.length; i++) {
+    let item = el.item(i)
+    //listen for tap on post item
+    item.onclick = function(e){
+        item.className += ' tapped'
+    }
+}
+
+console.log('wat')
+
+// actionItems = document.querySelectorAll('.post .action-item')
+// for (var i=0; i < el.length; i++) {
+//     let actionItem = el.item(i)
+//     //listen for tap on post item
+//     actionItem.onclick = function(e){
+//         console.log()
+//     }
+// }
 </script>
     </body>
 </html>

@@ -3,9 +3,20 @@
     margin-bottom: .5rem;
     color: #092828;
     font-family: Roboto;
-
     &:last-of-type{
         padding-bottom: 4rem;
+    }
+
+    &.tapped {
+        cursor: pointer;
+
+        .textContent {
+            opacity: 0;
+        }
+
+        .actions {
+            opacity: 1;
+        }
     }
 
     q {
@@ -15,7 +26,7 @@
         border-radius: 7px;
         background-color: #f6f6f6;
 
-        &:hover, .tapped {
+        &:hover {
             cursor: pointer;
 
             .textContent {
@@ -24,7 +35,6 @@
 
             .actions {
                 opacity: 1;
-                margin: 0 auto;
             }
         }
 
@@ -37,6 +47,39 @@
             opacity: 0;
         }
 
+    }
+
+    ul {
+        list-style-type: none
+    }
+
+    .actions {
+        margin: -15px auto;
+        display: inline;
+        width: 70%;
+        opacity: 0;
+        text-align: center;
+        .action-item {
+            padding: 10px;
+            display: inline-block;
+
+            &:hover {
+                color: @success-color;
+            }
+
+            .count {
+                border: none;
+                background: none;
+                display: block;
+                pointer-events: none;
+                max-width: 45px;
+                text-align: center;
+
+                &.dirty {
+                    color: @success-color;
+                }
+            }
+        }
     }
 
     .image-container {
@@ -87,6 +130,10 @@
 
     .reply {
         margin-left: 15%;
+
+        .actions {
+            width: 55%;
+        }
     }
 
     .mine {
@@ -100,9 +147,27 @@
             letter-spacing: normal;
             text-align: left;
             color: #ffffff;
+
+            &:before {
+                display: none;
+            }
+            &:hover {
+                cursor: auto;
+
+                .textContent {
+                    opacity: 1;
+                }
+
+                .actions {
+                    opacity: 0;
+                }
+            }
         }
 
         .text {
+            margin-left: 10%;
+            width: 80%;
+
             .name {
                 text-align: right;
                 .real {
@@ -152,9 +217,11 @@
         font-size: 11px;
         color: #b1bebe;
         flex-grow: 1;
+        color: @success-color;
     }
 
     #submit-post {
         flex-grow: 1;
+        cursor: pointer;
     }
 }

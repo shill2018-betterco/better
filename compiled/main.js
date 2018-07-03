@@ -114,14 +114,12 @@ let buildHTMLForPost = function(post) {
                             verified +
                             `<span class="real">${user.real_name}</span>` +
                             `<span class="user">@${user.username}</span>` +
-                            `<span class="time" data-timestamp=${post.ts}>${time}</span>` +
+                            `<span class="time">${time}</span>` +
                         `</div>` +
                         `<q>` +
-                            `<ul class="actions">` +
-                                `<li class="action-item"><i class="material-icons reply-icon">reply</i><input class="count" value=${Math.round(Math.random(100) * 100)} disabled /></li>` +
-                                `<li class="action-item"><i class="material-icons repeat-icon">repeat</i><input class="count" value=${Math.round(Math.random(100) * 100)} disabled /></li>` +
-                                `<li class="action-item"><i class="material-icons favorite-icon">favorite</i><input class="count" value=${Math.round(Math.random(100) * 100)} disabled /></li>` +
-                            `</ul>` +
+                            `<div class="actions">` +
+                                `<i class="material-icons reply-icon">reply</i>` +
+                            `</div>` +
                             `<span class="textContent">${checkedPost.message} ${hasAttachment ? '<i class="material-icons link-icon">link</i>': ''}</span>` +
                         `</q>` +
                         `<img class="attachment" src="${checkedPost.url || ''}" />` +
@@ -218,3 +216,38 @@ document.getElementById("new-post-text").onkeyup = checkLength;
 document.getElementById("new-post-text").onblur = checkLength;
 
 document.getElementById("chart-count")
+
+//listen for submit button
+document.getElementById("submit-post").onclick = function(e){
+    insertPost()
+    return false
+}
+
+//listen for enter keypress
+function checkEnter(e) {
+    if (e.keyCode == 13) {
+        insertPost()
+        return false
+    }
+}
+
+
+let el = document.getElementsByClassName('post')
+for (var i=0; i < el.length; i++) {
+    let item = el.item(i)
+    //listen for tap on post item
+    item.onclick = function(e){
+        item.className += ' tapped'
+    }
+}
+
+console.log('wat')
+
+// actionItems = document.querySelectorAll('.post .action-item')
+// for (var i=0; i < el.length; i++) {
+//     let actionItem = el.item(i)
+//     //listen for tap on post item
+//     actionItem.onclick = function(e){
+//         console.log()
+//     }
+// }
